@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap Example</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+
+
+
+        function selectionSortNumber(nmbr) {
+
+            for (var i = 0; i <= nmbr.length - 1; i++) {
+                var indexSmallestNumber = i;
+                for (var j = i + 1; j <= nmbr.length; j++) {
+                    if (nmbr[j] < nmbr[indexSmallestNumber]) {
+                        var indexSmallestNumber = j;
+                    }
+
+
+                }
+                [nmbr[i], nmbr[indexSmallestNumber]] = [nmbr[indexSmallestNumber], nmbr[i]];
+
+            }
+            return nmbr;
+
+        }
+
+            var nmbr = [8, 15, 21, -4, 11, 37, 25];
+            selectionSortNumber(nmbr);
+            console.log(nmbr)
+
+            function result(){
+                alert("Urutan dari terkecil hingga terbesar adalah " + nmbr )
+            }
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Selection Sort</h2>
+        <p>Urutkan <b>[8, 15, 21, -4, 11, 37, 25]</b> dari terkecil hingga terbesar menggunakan Selection Sort </p>
+        <br>
+        <button class="btn btn-primary" id="hasil" onclick="result();" >Tampilkan!</button>
+    </div>
+</body>
+
+</html>
