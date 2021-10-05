@@ -39,8 +39,17 @@
         selectionSortNumber(nmbr);
         console.log(nmbr)
 
+
         function result() {
+            var nmbr = [8, 15, 21, -4, 11, 37, 25];
+            selectionSortNumber(nmbr)
             alert("Urutan dari terkecil hingga terbesar adalah " + nmbr)
+        }
+
+        function hasil() {
+            var nmbr = document.getElementById("coba").value;
+            var angka = eval(nmbr);
+            alert("Urutan dari terkecil hingga terbesar adalah " + selectionSortNumber(angka))
         }
 
 
@@ -54,6 +63,20 @@
         <p>Urutkan <b>[8, 15, 21, -4, 11, 37, 25]</b> dari terkecil hingga terbesar menggunakan Selection Sort </p>
         <br>
         <button class="btn btn-primary" id="hasil" onclick="result();">Tampilkan!</button>
+    </div>
+
+
+    <br>
+
+    <div class="container">
+        <form method="GET">
+            <div class="form-group">
+                <label for="coba">Silahkan masukkan angka</label>
+                <!--input harus pakai [] dan comma separated-->
+                <input type="text" class="form-control" id="coba" name="awal" placeholder="Contoh : [1,2,3,4,...]">
+            </div>
+            <button type="submit" class="btn btn-danger" onclick="hasil();">Urutkan!</button>
+        </form>
     </div>
 </body>
 
