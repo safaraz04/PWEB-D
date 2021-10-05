@@ -24,20 +24,24 @@
 
 
                 }
-                [nmbr[i], nmbr[indexSmallestNumber]] = [nmbr[indexSmallestNumber], nmbr[i]];
+                if (indexSmallestNumber != i) {
+                    var temp = nmbr[i];
+                    nmbr[i] = nmbr[indexSmallestNumber];
+                    nmbr[indexSmallestNumber] = temp;
+                }
 
             }
             return nmbr;
 
         }
 
-            var nmbr = [8, 15, 21, -4, 11, 37, 25];
-            selectionSortNumber(nmbr);
-            console.log(nmbr)
+        var nmbr = [8, 15, 21, -4, 11, 37, 25];
+        selectionSortNumber(nmbr);
+        console.log(nmbr)
 
-            function result(){
-                alert("Urutan dari terkecil hingga terbesar adalah " + nmbr )
-            }
+        function result() {
+            alert("Urutan dari terkecil hingga terbesar adalah " + nmbr)
+        }
 
 
     </script>
@@ -49,7 +53,7 @@
         <h2>Selection Sort</h2>
         <p>Urutkan <b>[8, 15, 21, -4, 11, 37, 25]</b> dari terkecil hingga terbesar menggunakan Selection Sort </p>
         <br>
-        <button class="btn btn-primary" id="hasil" onclick="result();" >Tampilkan!</button>
+        <button class="btn btn-primary" id="hasil" onclick="result();">Tampilkan!</button>
     </div>
 </body>
 
